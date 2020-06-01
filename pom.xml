@@ -5,11 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.breeze</groupId>
-    <artifactId>message-middleware</artifactId>
+    <artifactId>message-queue</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>mq-common</module>
+        <module>mq-active</module>
+        <module>mq-rabbit</module>
+        <module>rocket-mq</module>
+        <module>mq-kafka</module>
+        <module>order-payment</module>
+        <module>send-message</module>
     </modules>
 
     <parent>
@@ -26,19 +32,6 @@
     </properties>
 
     <dependencies>
-
-        <!--alipay-easysdk-->
-        <dependency>
-            <groupId>com.alipay.sdk</groupId>
-            <artifactId>alipay-easysdk</artifactId>
-            <version>1.2.0</version>
-        </dependency>
-
-        <!--rabbitMq-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
-        </dependency>
 
         <!-- spring-web -->
         <dependency>

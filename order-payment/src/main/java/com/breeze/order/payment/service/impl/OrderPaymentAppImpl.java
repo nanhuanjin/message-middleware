@@ -7,6 +7,7 @@ import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsMessagingTemplate;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.jms.*;
@@ -30,6 +31,8 @@ public class OrderPaymentAppImpl implements OrderPaymentService {
     private AmqpTemplate amqpTemplate;
     @Autowired
     private RocketMQTemplate rocketMQTemplate;
+    @Autowired
+    private KafkaTemplate kafkaTemplate;
 
     @Override
     public int submitOrder(String orderNumber) throws JMSException {
@@ -81,6 +84,9 @@ public class OrderPaymentAppImpl implements OrderPaymentService {
 
     @Override
     public int payOrderWithKafkaMQ(String orderNumber) {
+        log.info("Kafka发送消息成功：{}", orderNumber);
+
+        this.kafkaTemplate.send("kafkaTopic", "Kafka：" + orderNumber);
         return 1;
     }
 }

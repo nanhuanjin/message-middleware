@@ -1,5 +1,7 @@
 package com.breeze.order.payment.service;
 
+import javax.jms.JMSException;
+
 /**
  * @author breeze
  * @date 2020/6/1
@@ -11,14 +13,14 @@ public interface OrderPaymentService {
      * @param orderNumber
      * @return
      */
-    int submitOrder(String orderNumber);
+    int submitOrder(String orderNumber) throws JMSException;
 
     /**
      * ActiveMQ版本 - 根据订单编号支付订单
      * @param orderNumber
      * @return
      */
-    int payOrderWithActiveMQ(String orderNumber);
+    int payOrderWithActiveMQ(String orderNumber) throws JMSException;
 
     /**
      * RabbitMQ版本 - 根据订单编号支付订单

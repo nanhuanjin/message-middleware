@@ -4,3 +4,9 @@ server:
 spring:
   application:
     name: rabbit-mq-service
+  rabbitmq:
+    host: 139.196.224.115
+    port: 6768
+    username: breeze
+    password: breeze1314520.
+    virtual-host: /breeze

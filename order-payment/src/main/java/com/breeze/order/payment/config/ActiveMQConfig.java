@@ -19,7 +19,7 @@ import javax.jms.Topic;
  * @date 2020/6/1
  */
 @Configuration
-public class BeanConfig {
+public class ActiveMQConfig {
 
     @Value("${spring.activemq.broker-url}")
     private String brokerUrl;
@@ -27,7 +27,7 @@ public class BeanConfig {
     @Value("${spring.activemq.user}")
     private String username;
 
-    @Value("${spring.activemq.topic-name}")
+    @Value("${spring.activemq.password}")
     private String password;
 
     @Value("${spring.activemq.queue-name}")

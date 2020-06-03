@@ -5,7 +5,7 @@ spring:
   application:
     name: order-payment
   activemq:
-    broker-url: 139.196.224.115:6860
+    broker-url: tcp://139.196.224.115:6860
     user: admin
     password: admin
     close-timeout: 15s   # 在考虑结束之前等待的时间
@@ -13,4 +13,18 @@ spring:
     non-blocking-redelivery: false  # 是否在回滚回滚消息之前停止消息传递。这意味着当启用此命令时，消息顺序不会被保留。
     send-timeout: 0     # 等待消息发送响应的时间。设置为0等待永远。
     queue-name: active.queue
-    topic-name: active.topic.name.model
+    topic-name: active.topic
+  rabbitmq:
+    host: 139.196.224.115
+    port: 6768
+    username: breeze
+    password: breeze1314520.
+    virtual-host: /breeze
+
+rocketmq:
+  name-server: 139.196.224.115:6900
+  producer:
+    group: ${spring.application.name}
+
+
+

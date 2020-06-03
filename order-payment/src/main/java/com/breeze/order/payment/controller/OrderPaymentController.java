@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.jms.JMSException;
+
 /**
  * @author breeze
  * @date 2020/6/1
@@ -30,7 +32,7 @@ public class OrderPaymentController {
     @GetMapping("/submit/order/{orderNumber}")
     public BaseResponse submitOrder(
             @ApiParam(name = "orderNumber", value = "订单编号", required = true)
-            @PathVariable("orderNumber")String orderNumber) {
+            @PathVariable("orderNumber")String orderNumber) throws JMSException {
 
         int count = this.orderPaymentService.submitOrder(orderNumber);
 
@@ -45,7 +47,7 @@ public class OrderPaymentController {
     @GetMapping("/success/active/{orderNumber}")
     public BaseResponse payOrderWithActiveMQ(
             @ApiParam(name = "orderNumber", value = "订单编号", required = true)
-            @PathVariable("orderNumber")String orderNumber) {
+            @PathVariable("orderNumber")String orderNumber) throws JMSException {
 
         int count = this.orderPaymentService.payOrderWithActiveMQ(orderNumber);
 

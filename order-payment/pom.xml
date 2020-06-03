@@ -29,6 +29,12 @@
             <artifactId>activemq-pool</artifactId>
             <version>5.15.12</version>
         </dependency>
+        <!--rabbitMq-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
 
     </dependencies>
 

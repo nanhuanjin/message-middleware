@@ -5,11 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author breeze
- * @date 2020/6/1
+ * @date 2020/6/3
  */
 @SpringBootApplication
-public class RocketMqApp {
+public class RocketApp {
     public static void main(String[] args) {
-        SpringApplication.run(RocketMqApp.class, args);
+        SpringApplication.run(RocketApp.class, args);
     }
 }

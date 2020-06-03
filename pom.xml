@@ -12,7 +12,7 @@
         <module>mq-common</module>
         <module>mq-active</module>
         <module>mq-rabbit</module>
-        <module>rocket-mq</module>
+        <module>mq-rocket</module>
         <module>mq-kafka</module>
         <module>order-payment</module>
         <module>send-message</module>
@@ -32,6 +32,13 @@
     </properties>
 
     <dependencies>
+
+        <!--rocketMq-->
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-spring-boot-starter</artifactId>
+            <version>2.1.0</version>
+        </dependency>
 
         <!-- spring-web -->
         <dependency>

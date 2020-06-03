@@ -1,4 +1,4 @@
-package com.breeze.mq.rocket.config;
+package com.breeze.order.payment.config;
 
 import com.google.common.base.Predicates;
 import org.springframework.context.annotation.Bean;
